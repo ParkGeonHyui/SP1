@@ -13,8 +13,8 @@ def application(environ, start_response):
 		c=a+b
 		d=a*b
 	else:
-		c='N/A'
-		d='N/A'
+		c=''
+		d=''
 	response_body=html%{
 		'c':c, 'd':d,
 	}
