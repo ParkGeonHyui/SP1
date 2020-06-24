@@ -8,11 +8,11 @@ def application(environ, start_response):
 	d=parse_qs(environ['QUERY_STRING'])
 	a=d.get('a',[''])[0]
 	b=d.get('b',[''])[0]
-	if a.isdigit() and b.isdigit():
+	try:
 		a,b=int(a),int(b)
 		c=a+b
 		d=a*b
-	else:
+	except ValueError:
 		c=''
 		d=''
 	response_body=html%{
